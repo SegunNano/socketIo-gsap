@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Chat Room <%= roomId %>
     </title>
+    <link rel="stylesheet" href="/styles.css">
 </head>
 
 <body>
@@ -26,12 +27,9 @@
     <button id="sendMessageBtn">Send Message</button>
 
     <h3>Chat:</h3>
-    <div id="chatBox"></div>
-    <!-- Chat Bubble -->
-    <ul class="space-y-5">
-        <!-- Chat -->
+    <ul id="chatBox"></ul>
+    <!-- <ul class="space-y-5">
         <li class="max-w-lg flex gap-x-2 sm:gap-x-4">
-            <!-- Card -->
             <div
                 class="bg-white border border-gray-200 rounded-2xl p-4 space-y-3 dark:bg-neutral-900 dark:border-neutral-700">
                 <h2 class="font-medium text-gray-800 dark:text-white">
@@ -56,27 +54,19 @@
                     </ul>
                 </div>
             </div>
-            <!-- End Card -->
         </li>
-        <!-- End Chat -->
 
-        <!-- Chat -->
         <li class="max-w-lg ms-auto flex justify-end gap-x-2 sm:gap-x-4">
             <div class="grow text-end space-y-3">
-                <!-- Card -->
                 <div class="inline-block bg-blue-600 rounded-2xl p-4 shadow-2xs">
                     <p class="text-sm text-white">
                         what's preline ui?
                     </p>
                 </div>
-                <!-- End Card -->
             </div>
         </li>
-        <!-- End Chat -->
 
-        <!-- Chat Bubble -->
         <li class="max-w-lg flex gap-x-2 sm:gap-x-4">
-            <!-- Card -->
             <div
                 class="bg-white border border-gray-200 rounded-2xl p-4 space-y-3 dark:bg-neutral-900 dark:border-neutral-700">
                 <p class="text-sm text-gray-800 dark:text-white">
@@ -103,10 +93,8 @@
                     </ul>
                 </div>
             </div>
-            <!-- End Card -->
         </li>
-        <!-- End Chat Bubble -->
-    </ul>
+    </ul> -->
     <!-- End Chat Bubble -->
 
     <script src="/socket.io/socket.io.js"></script>

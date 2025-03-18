@@ -95,11 +95,17 @@ io.on("connection", (socket) => {
 
   // Handle messages in the room
   socket.on("sendMessage", ({ roomId, message }) => {
+    rooms[roomId].chat.push(`${getUsername(roomId, socket.id)}: ${message}`);
+
     io.to(roomId).emit("message", rooms[roomId].chat);
   });
 });
 
-app.all("/", (req, res) => {
+app.get("/gsap-practice", (req, res) => {
+  res.render("gsap");
+});
+
+app.get("/", (req, res) => {
   res.render("home");
 });
 
