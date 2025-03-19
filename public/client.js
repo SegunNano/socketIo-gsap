@@ -1,8 +1,7 @@
 const socket = io();
 
 socket.on("connect", () => console.log("Client connected"));
-// socket.on("message", (message) => console.log(message));
-const roomId = window.location.pathname.split("/").pop(); // Get room ID from URL
+const roomId = window.location.pathname.split("/").pop();
 
 console.log(roomId);
 document.getElementById("joinRoomBtn") &&
@@ -27,15 +26,12 @@ document.getElementById("sendMessageBtn") &&
 
 socket.on("message", (msg) => {
   const chatBox = document.getElementById("chatBox");
-  //   const messageElement = document.createElement("p");
-  //   messageElement.innerText = msg;
   const messageLi = msg.map((mes) => `<li>${mes}</li>`).join("");
   console.log(messageLi, msg);
   chatBox.innerHTML = messageLi;
 });
 
-// Handle room full error
 socket.on("roomFull", (msg) => {
   alert(msg);
-  window.location.href = "/room/create"; // Redirect to create a new room
+  window.location.href = "/room/create";
 });
